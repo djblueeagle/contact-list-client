@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import Button from './Button';
-import PropTypes from 'prop-types';
 import { changeFilterKeyword } from '../actions';
 
 const styles = StyleSheet.create({

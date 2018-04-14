@@ -6,7 +6,6 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import Button from './Button';
-import PropTypes from 'prop-types';
 import { addContact } from '../actions';
 
 const styles = StyleSheet.create({

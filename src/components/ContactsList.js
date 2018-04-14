@@ -6,26 +6,16 @@ import ContactItem from './ContactsItem';
 /**
  * Showing list of contacts
  */
-class ContactsList extends Component {
-  constructor(props) {
-    super(props);
-  }
 
-  _generateTransactionItem({ item }) {
-    return <ContactItem {...item} />;
-  }
-
-  render() {
-    const { filteredContact } = this.props;
-    return (
-      <FlatList
-        data={filteredContact}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={this._generateTransactionItem}
-      />
-    );
-  }
-}
+const ContactsList = ({ filteredContact }) => {
+  return (
+    <FlatList
+      data={filteredContact}
+      keyExtractor={(item, index) => index.toString()}
+      renderItem={({ item }) => (<ContactItem {...item} />)}
+    />
+  );
+};
 
 const filteredContact = (contacts, keyword) => {
   const keywordLowerCase = keyword.toLowerCase();
