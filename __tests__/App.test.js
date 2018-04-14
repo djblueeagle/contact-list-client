@@ -62,12 +62,12 @@ describe('App', () => {
     });
   });
 
-  describe('#filteredContact', () => {
+  describe('#_filteredContact', () => {
     it('return 0 contact when keyword not matching any contact', () => {
       const contacts = [{ name: 'Dewa', email: 'awidiya.dewa@gmail.com' }];
       const wrapper = shallow(<App contacts={contacts}/>);
       wrapper.setState({ filterKeyword: 'john doe' });
-      const filteredContact = wrapper.instance().filteredContact();
+      const filteredContact = wrapper.instance()._filteredContact();
       expect(filteredContact.length).toBe(0);
     });
 
@@ -75,7 +75,7 @@ describe('App', () => {
       const contacts = [{ name: 'Dewa', email: 'awidiya.dewa@gmail.com' }];
       const wrapper = shallow(<App contacts={contacts}/>);
       wrapper.setState({ filterKeyword: 'dew' });
-      const filteredContact = wrapper.instance().filteredContact();
+      const filteredContact = wrapper.instance()._filteredContact();
       expect(filteredContact.length).toBe(1);
       expect(filteredContact).toEqual(contacts);
     });
@@ -88,7 +88,7 @@ describe('App', () => {
       ];
       const wrapper = shallow(<App contacts={contacts}/>);
       wrapper.setState({ filterKeyword: 'john' });
-      const filteredContact = wrapper.instance().filteredContact();
+      const filteredContact = wrapper.instance()._filteredContact();
       const expectedFilteredContact = [
         { name: 'John Doe', email: 'johndoe@gmail.com' },
         { name: 'John Cena', email: 'cena@gmail.com' }

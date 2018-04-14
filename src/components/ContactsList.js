@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
-import {
-  FlatList
-} from 'react-native';
+import { connect } from 'react-redux';
+import { FlatList } from 'react-native';
 import ContactItem from './ContactsItem';
 
 /**
  * Showing list of contacts
  */
-export default class ContactsList extends Component {
-  _generateTransactionItem({item}) {
-    return <ContactItem {...item}/>
+class ContactsList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  _generateTransactionItem({ item }) {
+    return <ContactItem {...item} />;
   }
 
   render() {
-    const { contacts } = this.props;
+    const { filteredContact } = this.props;
     return (
       <FlatList
-        data={contacts}
+        data={filteredContact}
         keyExtractor={(item, index) => index.toString()}
         renderItem={this._generateTransactionItem}
       />
     );
   }
 }
+
+const filteredContact = (contacts, keyword) => {
+  const keywordLowerCase = keyword.toLowerCase();
+  return contacts.filter((contact) => {
+    const contactNameLowerCase = contact.name.toLowerCase();
+    return contactNameLowerCase.includes(keywordLowerCase);
+  });
+};
+
+const mapStateToProps = ({ contact, filter }) => ({
+  filteredContact: filteredContact(contact, filter),
+});
+
+export default connect(mapStateToProps)(ContactsList);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   TouchableOpacity,
   Text,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 
 export default class Button extends Component {
@@ -29,13 +29,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 4,
     borderRadius: 5,
-    backgroundColor: '#ffffff20'
+    backgroundColor: '#ffffff20',
   },
   buttonText: {
     flex: 1,
     fontWeight: 'bold',
     fontSize: 14,
     textAlign: 'center',
-    color: 'white'
-  }
+    color: 'white',
+  },
 });
