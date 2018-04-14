@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   TouchableOpacity,
   Text,
   StyleSheet,
 } from 'react-native';
 
-export default class Button extends Component {
-  render() {
-    return (
-      <TouchableOpacity
-        style={styles.button}
-        onPress={this.props.onPress}
+const Button = ({ value, onPress }) => {
+  return (
+    <TouchableOpacity
+      style={styles.button}
+      onPress={onPress}
+    >
+      <Text
+        style={styles.buttonText}
       >
-        <Text
-          style={styles.buttonText}
-        >
-          {this.props.value}
-        </Text>
-      </TouchableOpacity>
-    );
-  }
-}
+        {value}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   button: {
@@ -39,3 +37,5 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
+
+export default Button;

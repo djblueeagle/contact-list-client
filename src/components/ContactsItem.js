@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Text,
   View,
   StyleSheet,
   TouchableOpacity,
-  Image
+  Image,
 } from 'react-native';
 import md5 from 'md5';
 import PropTypes from 'prop-types';
@@ -12,40 +12,38 @@ import PropTypes from 'prop-types';
 /**
  * Showing contact item
  */
-export default class ContactItem extends Component {
-  render() {
-    const {name, email} = this.props;
-    return (
-      <TouchableOpacity
-        style={styles.containerRoot}
+
+const ContactItem = ({ name, email}) => {
+  return (
+    <TouchableOpacity
+      style={styles.containerRoot}
+    >
+      <View
+        style={styles.containerImage}
       >
-        <View
-          style={styles.containerImage}
+        <Image
+          source={{ uri: `https://gravatar.com/avatar/${md5(email)}.png?s=200` }}
+          style={styles.contactImage}
+        />
+      </View>
+      <View
+        style={styles.containerContact}
+      >
+        <Text
+          style={styles.contactName}
         >
-          <Image
-            source={{ uri: `https://gravatar.com/avatar/${md5(email)}.png?s=200` }}
-            style={styles.contactImage}
-          />
-        </View>
-        <View
-          style={styles.containerContact}
-        >
-          <Text
-            style={styles.contactName}
-          >
-            {name}
-          </Text>
-        </View>
-      </TouchableOpacity>
-    );
-  }
-}
+          {name}
+        </Text>
+      </View>
+    </TouchableOpacity>
+
+  );
+};
 
 ContactItem.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
 };
-
 
 const styles = StyleSheet.create({
   containerRoot: {
@@ -61,12 +59,12 @@ const styles = StyleSheet.create({
   containerContact: {
     flex: 4,
     padding: 8,
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   containerImage: {
     alignItems: 'flex-start',
     justifyContent: 'center',
-    paddingRight: 8
+    paddingRight: 8,
   },
   contactName: {
     fontSize: 16,
@@ -77,6 +75,8 @@ const styles = StyleSheet.create({
   contactImage: {
     height: 50,
     width: 50,
-    borderRadius: 25
-  }
+    borderRadius: 25,
+  },
 });
+
+export default ContactItem;
