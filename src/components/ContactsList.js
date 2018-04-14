@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { FlatList } from 'react-native';
 import ContactItem from './ContactsItem';

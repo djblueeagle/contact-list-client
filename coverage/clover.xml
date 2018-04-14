@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1523693274145" clover="3.2.0">
+  <project timestamp="1523693274146" name="All files">
+    <metrics statements="66" coveredstatements="63" conditionals="12" coveredconditionals="11" methods="27" coveredmethods="25" elements="105" coveredelements="99" complexity="0" loc="66" ncloc="66" packages="4" files="11" classes="11">
+      <package name="contact-list-react-native">
+        <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <file name="setupTests.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/setupTests.js">
+          <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+          <line num="8" count="9" type="stmt"/>
+          <line num="9" count="9" type="stmt"/>
+          <line num="10" count="9" type="stmt"/>
+          <line num="11" count="1044" type="cond" truecount="1" falsecount="1"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="16" count="9" type="stmt"/>
+        </file>
+      </package>
+      <package name="contact-list-react-native.src.actions">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="index.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/actions/index.js">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="1" count="4" type="stmt"/>
+          <line num="2" count="3" type="stmt"/>
+          <line num="5" count="4" type="stmt"/>
+          <line num="6" count="4" type="stmt"/>
+        </file>
+      </package>
+      <package name="contact-list-react-native.src.components">
+        <metrics statements="46" coveredstatements="44" conditionals="4" coveredconditionals="4" methods="22" coveredmethods="20"/>
+        <file name="App.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/components/App.js">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
+          <line num="27" count="2" type="stmt"/>
+        </file>
+        <file name="Button.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/components/Button.js">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="8" count="4" type="stmt"/>
+          <line num="9" count="5" type="stmt"/>
+          <line num="23" count="4" type="stmt"/>
+        </file>
+        <file name="ContactFilter.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/components/ContactFilter.js">
+          <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="29" count="6" type="stmt"/>
+          <line num="30" count="6" type="stmt"/>
+          <line num="33" count="6" type="stmt"/>
+          <line num="34" count="6" type="stmt"/>
+          <line num="38" count="2" type="stmt"/>
+          <line num="42" count="2" type="stmt"/>
+          <line num="46" count="10" type="stmt"/>
+          <line num="67" count="6" type="stmt"/>
+          <line num="69" count="2" type="stmt"/>
+        </file>
+        <file name="ContactForm.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/components/ContactForm.js">
+          <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
+          <line num="12" count="2" type="stmt"/>
+          <line num="33" count="8" type="stmt"/>
+          <line num="34" count="8" type="stmt"/>
+          <line num="38" count="8" type="stmt"/>
+          <line num="39" count="8" type="stmt"/>
+          <line num="40" count="8" type="stmt"/>
+          <line num="44" count="1" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
+          <line num="52" count="2" type="stmt"/>
+          <line num="53" count="2" type="cond" truecount="4" falsecount="0"/>
+          <line num="54" count="1" type="stmt"/>
+          <line num="56" count="1" type="stmt"/>
+          <line num="57" count="1" type="stmt"/>
+          <line num="61" count="13" type="stmt"/>
+          <line num="91" count="8" type="stmt"/>
+          <line num="93" count="1" type="stmt"/>
+        </file>
+        <file name="ContactsItem.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/components/ContactsItem.js">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="16" count="3" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
+          <line num="43" count="3" type="stmt"/>
+          <line num="48" count="3" type="stmt"/>
+        </file>
+        <file name="ContactsList.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/components/ContactsList.js">
+          <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+          <line num="10" count="2" type="stmt"/>
+          <line num="11" count="5" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="20" count="2" type="stmt"/>
+          <line num="21" count="5" type="stmt"/>
+          <line num="22" count="5" type="stmt"/>
+          <line num="23" count="11" type="stmt"/>
+          <line num="24" count="11" type="stmt"/>
+          <line num="28" count="5" type="stmt"/>
+        </file>
+      </package>
+      <package name="contact-list-react-native.src.reducers">
+        <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <file name="contact.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/reducers/contact.js">
+          <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="18" count="6" type="cond" truecount="2" falsecount="0"/>
+          <line num="20" count="2" type="stmt"/>
+          <line num="21" count="2" type="stmt"/>
+          <line num="23" count="4" type="stmt"/>
+        </file>
+        <file name="filter.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/reducers/filter.js">
+          <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="4" count="6" type="cond" truecount="2" falsecount="0"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="8" count="4" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/it190218/CHIP/assignments/contact-list-react-native/src/reducers/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

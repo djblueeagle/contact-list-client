@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import Button from './Button';
+import PropTypes from 'prop-types';
 import { addContact } from '../actions';
 
 const styles = StyleSheet.create({
@@ -32,7 +33,7 @@ class ContactForm extends Component {
     super(props);
     this.state = {
       name: '',
-      emailL: '',
+      email: '',
     };
     this._saveContact = this._saveContact.bind(this);
     this._onChangeName = this._onChangeName.bind(this);
