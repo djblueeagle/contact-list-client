@@ -1,6 +1,14 @@
-const ADD_USER = 'ADD_CONTACT';
+import { createActions, createReducer } from 'reduxsauce';
+import Immutable from 'seamless-immutable';
 
-const INITIAL_DATA = [
+const { Types, Creators } = createActions({
+  addUser: ['name', 'email'],
+});
+
+export const ContactTypes = Types;
+export default Creators;
+
+const INITIAL_STATE = Immutable([
   { name: 'Dhivya', email: 'raj.dhivya@gmail.com' },
   { name: 'DP', email: 'hsdpal@gmail.com' },
   { name: 'Neel', email: 'vascodagama1@gmail.com' },
@@ -12,14 +20,15 @@ const INITIAL_DATA = [
   { name: 'Friend of Kim', email: 'mail@gmail.com' },
   { name: 'Mother of Kim', email: 'mail@gmail.com' },
   { name: 'Father of Kim', email: 'mail@gmail.com' },
-];
+]);
 
-export default function(state = INITIAL_DATA, action) {
-  switch(action.type) {
-    case ADD_USER:
-      const { name, email } = action.payload;
-      return [{ name, email }, ...state];
-    default :
-      return state;
-  }
-}
+export const addUser = (state = INITIAL_STATE, action) => {
+  const { name, email } = action;
+  return [{ name, email }, ...state];
+};
+
+export const HANDLERS = {
+  [Types.ADD_USER]: addUser,
+};
+
+export const reducer = createReducer(INITIAL_STATE, HANDLERS);

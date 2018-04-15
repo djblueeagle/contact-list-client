@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import Button from './Button';
-import { changeFilterKeyword } from '../actions';
+import filterActions from '../redux/filter';
 
 const styles = StyleSheet.create({
   container: {
@@ -64,10 +64,11 @@ class ContactFilter extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  onChangeKeyword: (keyword) => {
-    dispatch(changeFilterKeyword(keyword));
-  },
-});
+const mapDispatchToProps = dispatch => {
+  return {
+    onChangeKeyword: (keyword) =>
+      dispatch(filterActions.changeKeyword(keyword)),
+  };
+};
 
 export default connect(null, mapDispatchToProps)(ContactFilter);

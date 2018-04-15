@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import ContactList from './ContactsList';
 import ContactForm from './ContactForm';
 import ContactFilter from './ContactFilter';
-import reducer from '../reducers';
+import reducer from '../redux';
 
 const styles = StyleSheet.create({
   container: {

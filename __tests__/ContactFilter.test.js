@@ -47,7 +47,7 @@ describe('ContactFilter', () => {
       wrapper.setState({ keyword: ' ' });
       btnFilter.props().onPress();
       const actions = store.getActions();
-      expect(actions).toEqual([{ 'payload': ' ', 'type': 'CHANGE_KEYWORD' }]);
+      expect(actions).toEqual([{ 'keyword': ' ', 'type': 'CHANGE_KEYWORD' }]);
     });
 
     it('send a proper actions when the button filter is being clicked', () => {
@@ -55,7 +55,7 @@ describe('ContactFilter', () => {
       wrapper.setState({ keyword: 'Nando' });
       btnFilter.props().onPress();
       const actions = store.getActions();
-      expect(actions).toEqual([{ 'payload': 'Nando', 'type': 'CHANGE_KEYWORD' }]);
+      expect(actions).toEqual([{ 'keyword': 'Nando', 'type': 'CHANGE_KEYWORD' }]);
     });
   });
 });

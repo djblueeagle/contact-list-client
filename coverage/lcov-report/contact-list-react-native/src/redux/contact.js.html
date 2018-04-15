@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for contact-list-react-native/src/components/Button.js</title>
+    <title>Code coverage report for contact-list-react-native/src/redux/contact.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">contact-list-react-native/src/components</a> Button.js
+      <a href="../../../index.html">All files</a> / <a href="index.html">contact-list-react-native/src/redux</a> contact.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>8/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>8/8</span>
       </div>
     </div>
   </div>
@@ -77,36 +77,17 @@
 32
 33
 34
-35
-36
-37
-38
-39
-40
-41
-42</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+35</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,52 +101,50 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import {
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-} from 'react-native';
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createActions, createReducer } from 'reduxsauce';
+import Immutable from 'seamless-immutable';
 &nbsp;
-const Button = ({ value, onPress }) =&gt; {
-  return (
-    &lt;TouchableOpacity
-      style={styles.button}
-      onPress={onPress}
-    &gt;
-      &lt;Text
-        style={styles.buttonText}
-      &gt;
-        {value}
-      &lt;/Text&gt;
-    &lt;/TouchableOpacity&gt;
-  );
-};
-&nbsp;
-const styles = StyleSheet.create({
-  button: {
-    flexDirection: 'row',
-    minWidth: 60,
-    alignItems: 'center',
-    marginLeft: 4,
-    borderRadius: 5,
-    backgroundColor: '#ffffff20',
-  },
-  buttonText: {
-    flex: 1,
-    fontWeight: 'bold',
-    fontSize: 14,
-    textAlign: 'center',
-    color: 'white',
-  },
+const { Types, Creators } = createActions({
+  addUser: ['name', 'email'],
 });
 &nbsp;
-export default Button;
+export const ContactTypes = Types;
+export default Creators;
+&nbsp;
+const INITIAL_STATE = Immutable([
+  { name: 'Dhivya', email: 'raj.dhivya@gmail.com' },
+  { name: 'DP', email: 'hsdpal@gmail.com' },
+  { name: 'Neel', email: 'vascodagama1@gmail.com' },
+  { name: 'Cheetan', email: 'mail@chetankothari.in' },
+  { name: 'Dewa', email: 'awidiya.dewa@gmail.com' },
+  { name: 'Kim', email: 'mail@gmail.com' },
+  { name: 'Other Kim', email: 'mail@gmail.com' },
+  { name: 'Another Kim', email: 'mail@gmail.com' },
+  { name: 'Friend of Kim', email: 'mail@gmail.com' },
+  { name: 'Mother of Kim', email: 'mail@gmail.com' },
+  { name: 'Father of Kim', email: 'mail@gmail.com' },
+]);
+&nbsp;
+export const addUser = (state = <span class="branch-0 cbranch-no" title="branch not covered" >INITIAL_STATE,</span> action) =&gt; {
+  const { name, email } = action;
+  return [{ name, email }, ...state];
+};
+&nbsp;
+export const HANDLERS = {
+  [Types.ADD_USER]: addUser,
+};
+&nbsp;
+export const reducer = createReducer(INITIAL_STATE, HANDLERS);
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

@@ -6,8 +6,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import Button from './Button';
-import PropTypes from 'prop-types';
-import { addContact } from '../actions';
+import contactActions from '../redux/contact';
 
 const styles = StyleSheet.create({
   container: {
@@ -88,10 +87,11 @@ class ContactForm extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addContact: (name, email) => {
-    dispatch(addContact(name, email));
-  },
-});
+const mapDispatchToProps = dispatch => {
+  return {
+    addContact: (name, email) =>
+      dispatch(contactActions.addUser(name, email)),
+  };
+};
 
 export default connect(null, mapDispatchToProps)(ContactForm);

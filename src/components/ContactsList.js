@@ -25,8 +25,8 @@ const filteredContact = (contacts, keyword) => {
   });
 };
 
-const mapStateToProps = ({ contact, filter }) => ({
-  filteredContact: filteredContact(contact, filter),
+const mapStateToProps = (state) => ({
+  filteredContact: filteredContact(state.contact, state.filter),
 });
 
 export default connect(mapStateToProps)(ContactsList);

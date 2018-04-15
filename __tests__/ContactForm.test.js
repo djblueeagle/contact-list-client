@@ -5,7 +5,6 @@ import { shallow } from 'enzyme';
 import { TextInput } from 'react-native';
 import Button from '../src/components/Button';
 
-
 describe('ContactForm', () => {
   const middlewares = [];
   const mockStore = configureStore(middlewares);
@@ -35,21 +34,21 @@ describe('ContactForm', () => {
     it('render TextInput with placeholder \'Name\' and \'Email\' and button with text SAVE', () => {
       const textInputs = wrapper.find(TextInput);
       const buttonSave = wrapper.find(Button);
-      expect(textInputs.at(0).find("[placeholder='Name']").length).toBe(1);
-      expect(textInputs.at(1).find("[placeholder='Email']").length).toBe(1);
-      expect(buttonSave.find("[value='Save']").length).toBe(1);
+      expect(textInputs.at(0).find('[placeholder=\'Name\']').length).toBe(1);
+      expect(textInputs.at(1).find('[placeholder=\'Email\']').length).toBe(1);
+      expect(buttonSave.find('[value=\'Save\']').length).toBe(1);
     });
 
     it('change state.name when event onChange occur in Name TextInput', () => {
       const textInputs = wrapper.find(TextInput);
-      const nameInput = textInputs.find("[placeholder='Name']");
+      const nameInput = textInputs.find('[placeholder=\'Name\']');
       nameInput.props().onChangeText('Dewa');
       expect(wrapper.state().name).toBe('Dewa');
     });
 
     it('change state.email when event onChange occur in Email TextInput', () => {
       const textInputs = wrapper.find(TextInput);
-      const emailInput = textInputs.find("[placeholder='Email']");
+      const emailInput = textInputs.find('[placeholder=\'Email\']');
       emailInput.props().onChangeText('awidiya.dewa@gmail.com');
       expect(wrapper.state().email).toBe('awidiya.dewa@gmail.com');
     });
@@ -67,7 +66,7 @@ describe('ContactForm', () => {
       wrapper.setState({ name: 'neel', email: 'neel@gmail.com' });
       btnFilter.props().onPress();
       const actions = store.getActions();
-      expect(actions).toEqual([{"payload": {"email": "neel@gmail.com", "name": "neel"}, "type": "ADD_CONTACT"}]);
+      expect(actions).toEqual([{ 'email': 'neel@gmail.com', 'name': 'neel', 'type': 'ADD_USER' }]);
     });
   });
 });
