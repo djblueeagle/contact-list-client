@@ -1,0 +1,11 @@
+{
+  "filter" : {
+    "title" : "Cari",
+    "placeholder": "Ketik Pencarianmu"
+  },
+  "form": {
+    "nameLabel" : "Nama",
+    "emailLabel" : "Email",
+    "saveLabel": "Simpan"
+  }
+}

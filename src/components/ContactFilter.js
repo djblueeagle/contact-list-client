@@ -3,6 +3,7 @@ import { View, StyleSheet, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import Button from './Button';
 import filterActions from '../redux/filter';
+import { translate } from '../Localization';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
   },
   filterInput: {
     flex: 1,
-    height: 35,
+    height: 40,
     borderRadius: 5,
     backgroundColor: '#ffffff20',
     marginLeft: 3,
@@ -50,14 +51,15 @@ class ContactFilter extends Component {
         <TextInput
           style={styles.filterInput}
           value={this.state.keyword}
-          placeholder="Search here"
+          placeholder={translate('filter.placeholder')}
+          underlineColorAndroid='transparent'
           placeholderTextColor="white"
           onChangeText={this._onChangeKeyword}
           onSubmitEditing={this._onFilterContact}
         />
         <Button
           onPress={this._onFilterContact}
-          value={'Search'}
+          value={translate('filter.title')}
         />
       </View>
     );

@@ -7,6 +7,7 @@ import {
 import { connect } from 'react-redux';
 import Button from './Button';
 import contactActions from '../redux/contact';
+import { translate } from '../Localization';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 2,
-    height: 35,
+    height: 40,
     borderRadius: 5,
     backgroundColor: '#ffffff20',
     marginLeft: 3,
@@ -63,7 +64,8 @@ class ContactForm extends Component {
       >
         <TextInput
           style={styles.input}
-          placeholder="Name"
+          placeholder={translate('form.nameLabel')}
+          underlineColorAndroid='transparent'
           autoCorrection={false}
           value={this.state.name}
           placeholderTextColor="white"
@@ -71,7 +73,8 @@ class ContactForm extends Component {
         />
         <TextInput
           style={styles.input}
-          placeholder="Email"
+          placeholder={translate('form.emailLabel')}
+          underlineColorAndroid='transparent'
           autoCorrection={false}
           autoCapitalize="none"
           value={this.state.email}
@@ -80,7 +83,7 @@ class ContactForm extends Component {
         />
         <Button
           onPress={this._saveContact}
-          value="Save"
+          value={translate('form.saveLabel')}
         />
       </View>
     );
