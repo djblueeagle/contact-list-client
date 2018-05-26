@@ -1,0 +1,12 @@
+languange: node_js
+node_js:
+  - "9.7.1"
+sudo: false
+cache:
+  directories:
+  - node_modules
+
+install:
+  - npm install
+script:
+  - npm test -- --coverage
