@@ -1,10 +1,12 @@
 {
-  "name": "helloRN",
+  "name": "contact-list-mobile",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "build-android": "react-native run-android --port 8081",
+    "build-ios": "react-native run-ios --port 8081"
   },
   "dependencies": {
     "md5": "^2.2.1",
