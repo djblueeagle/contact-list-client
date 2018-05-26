@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
+import { connect } from 'react-redux';
 import Button from './Button';
-import PropTypes from 'prop-types';
+import filterActions from '../redux/filter';
+import { translate } from '../Localization';
 
-export default class ContactFilter extends Component {
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    padding: 8,
+    paddingTop: 20,
+    backgroundColor: '#3F3E4F',
+  },
+  filterInput: {
+    flex: 1,
+    height: 40,
+    borderRadius: 5,
+    backgroundColor: '#ffffff20',
+    marginLeft: 3,
+    marginRight: 3,
+    paddingLeft: 5,
+    paddingRight: 5,
+    color: 'white',
+  },
+});
+
+class ContactFilter extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,8 +40,7 @@ export default class ContactFilter extends Component {
   }
 
   _onFilterContact() {
-    const { onFilterContact } = this.props;
-    onFilterContact(this.state.keyword);
+    this.props.onChangeKeyword(this.state.keyword);
   }
 
   render() {
@@ -30,40 +51,26 @@ export default class ContactFilter extends Component {
         <TextInput
           style={styles.filterInput}
           value={this.state.keyword}
-          placeholder='Search here'
-          placeholderTextColor='white'
+          placeholder={translate('filter.placeholder')}
+          underlineColorAndroid='transparent'
+          placeholderTextColor="white"
           onChangeText={this._onChangeKeyword}
           onSubmitEditing={this._onFilterContact}
         />
         <Button
           onPress={this._onFilterContact}
-          value={'Search'}
+          value={translate('filter.title')}
         />
       </View>
     );
   }
 }
 
-ContactFilter.propTypes = {
-  onFilterContact: PropTypes.func.isRequired
+const mapDispatchToProps = dispatch => {
+  return {
+    onChangeKeyword: (keyword) =>
+      dispatch(filterActions.changeKeyword(keyword)),
+  };
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    padding: 8,
-    paddingTop: 20,
-    backgroundColor: '#3F3E4F',
-  },
-  filterInput: {
-    flex: 1,
-    height: 35,
-    borderRadius: 5,
-    backgroundColor: '#ffffff20',
-    marginLeft: 3,
-    marginRight: 3,
-    paddingLeft: 5,
-    paddingRight: 5,
-    color: 'white',
-  }
-});
+export default connect(null, mapDispatchToProps)(ContactFilter);

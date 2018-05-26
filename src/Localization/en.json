@@ -1,0 +1,11 @@
+{
+  "filter" : {
+    "title" : "Search",
+    "placeholder": "Search Here"
+  },
+  "form": {
+    "nameLabel" : "Name",
+    "emailLabel" : "Email",
+    "saveLabel": "Save"
+  }
+}
